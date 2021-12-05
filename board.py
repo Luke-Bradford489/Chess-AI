@@ -13,14 +13,14 @@ class Piece(Enum):
 
 class ChessBoard:
       
-      board = [[Piece.EMPTY]*8]*8
+      board = np.full((8,8), Piece.EMPTY)
       def __init__(self, ID):
           self.ID = ID
           
           
+          
       @classmethod
       def display(cls):
-            print(cls.board[1])
             for i in cls.board:
                   lineOutput = ""
                   for j in i:
@@ -32,11 +32,12 @@ class ChessBoard:
 
       @classmethod
       def initializeBoard(cls):
-            for i in range(0,7):
+            
+            for i in range(0,8):
                   cls.board[1][i] = Piece.PAWN
-            for i in range(0,7):
                   cls.board[6][i] = Piece.PAWN
-
+                  
+            
             cls.board[0][0] = Piece.ROOK
             cls.board[0][1] = Piece.KNIGHT
             cls.board[0][2] = Piece.BISHOP
@@ -55,6 +56,7 @@ class ChessBoard:
             cls.board[7][6] = Piece.KNIGHT
             cls.board[7][7] = Piece.ROOK
 
+
             return cls
 
             
@@ -64,7 +66,7 @@ class ChessBoard:
             
 
 test1 = ChessBoard(ID="Test1")
-#test1 = test1.initializeBoard()
+test1 = test1.initializeBoard()
 test1.display()
 
 
