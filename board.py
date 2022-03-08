@@ -1,14 +1,15 @@
 import numpy as np
+import pieces
 from enum import Enum
 
 class Piece(Enum):
       EMPTY = 0
-      PAWN = 1
-      ROOK = 2
-      BISHOP = 3
-      KNIGHT = 4
-      QUEEN = 5
-      KING = 6
+      pieces.Pawn = 1
+      pieces.Rook = 2
+      pieces.Bishop = 3
+      pieces.Knight = 4
+      pieces.Queen = 5
+      pieces.King = 6
 
 
 class ChessBoard:
@@ -34,8 +35,8 @@ class ChessBoard:
       def initializeBoard(cls):
             
             for i in range(0,8):
-                  cls.board[1][i] = Piece.PAWN
-                  cls.board[6][i] = Piece.PAWN
+                  cls.board[1][i] = pieces.Pawn('b',1,i)
+                  cls.board[6][i] = pieces.Pawn('w',1,i)
                   
             
             cls.board[0][0] = Piece.ROOK
