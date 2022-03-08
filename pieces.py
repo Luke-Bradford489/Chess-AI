@@ -55,7 +55,7 @@ class Pawn(ChessPiece):
                       return True
                 
 class Knight(ChessPiece):
-      
+      name = "Knight"
       @staticmethod
       def legalMove(currRow, currCol, newRow, newCol):
 
@@ -83,7 +83,7 @@ class Knight(ChessPiece):
                   return False
    
 class Rook(ChessPiece):
-      
+      name = "Rook"
       @staticmethod
       def legalMove(currRow, currCol, newRow, newCol):
             if (newCol in range(1,8) and newRow == currRow):
@@ -94,13 +94,14 @@ class Rook(ChessPiece):
                   return False
 
 class Bishop(ChessPiece):
-
+      name = "Bishop"
       @staticmethod
       def legalMove(currRow, currCol, newRow, newCol):
             if (newCol in range(1,8) and newRow in range(1,8) ) and (abs(currCol - newCol) == abs(newRow - currRow)):
                   return True
 
 class King(ChessPiece):
+      name = "King"
       @staticmethod                 
       def legalMove(currRow, currCol, newRow, newCol):
             if (newRow in range(1,8)) and (newCol in range(1,8)):
@@ -124,7 +125,7 @@ class King(ChessPiece):
                         return False
 
 class Queen(ChessPiece):
-
+      name = "Queen"
       def legalMove(currRow, currCol, newRow, newCol):
             if (newCol in range(1,8) and newRow == currRow):
                   return True
